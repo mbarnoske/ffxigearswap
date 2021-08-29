@@ -55,10 +55,8 @@ function user_setup()
    -- Augmented gear pieces
    QuellerCure = { name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}}
    QuellerCuraga = { name="Queller Rod", augments={'MND+15','Mag. Acc.+15','"Cure" potency +15%',}}
-   GrioEnfeeb = { name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+30','"Mag.Atk.Bns."+27','Magic Damage +2',}}
    GrioNuke = { name="Grioavolr", augments={'Magic burst mdg.+5%','INT+10','Mag. Acc.+30','"Mag.Atk.Bns."+24','Magic Damage +9',}}
    DarkRing = {name="Dark Ring", augments={'Phys. dmg. taken -4%','Magic dmg. taken -5%','Spell interruption rate down -3%',}}
-   ChironicRefreshHands = { name="Chironic Gloves", augments={'CHR+1','Accuracy+2','"Refresh"+1','Accuracy+13 Attack+13','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
    ChironicMAccHands = { name="Chironic Gloves", augments={'Mag. Acc.+30','"Fast Cast"+4','Magic Damage +6','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}   
    ChironicDTHands = { name="Chironic Gloves", augments={'MND+1','"Dbl.Atk."+3','Damage taken-4%','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
    ChironicDTFeet = { name="Chironic Slippers", augments={'"Dbl.Atk."+1','MND+5','Damage taken-4%','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
@@ -93,12 +91,12 @@ function init_gear_sets()
    -- Idle/Resting sets
    sets.idle.Town = {main=QuellerCure,sub="Ammurapi Shield",ammo="Homiliary",
       head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Static Earring",
-      body="Ebers Bliaud +1",hands="Inyan. Dastanas +2",ring1="Inyanga Ring",ring2="Stikini Ring +1",
+      body="Ebers Bliaut +1",hands="Inyan. Dastanas +2",ring1="Inyanga Ring",ring2="Stikini Ring +1",
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet="Inyan. Crackows +2"}
 
    sets.idle.Field = {main=QuellerCure,sub="Ammurapi Shield",ammo="Homiliary",
       head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Static Earring",
-      body="Ebers Bliaud +1",hands="Inyan. Dastanas +2",ring1="Inyanga Ring",ring2="Stikini Ring +1",
+      body="Ebers Bliaut +1",hands="Inyan. Dastanas +2",ring1="Inyanga Ring",ring2="Stikini Ring +1",
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet="Inyan. Crackows +2"} 
       
    sets.idle.Weak = sets.idle.Field
@@ -108,8 +106,9 @@ function init_gear_sets()
            
    -- Precast sets to enhance JAs
    sets.precast.JA['Devotion'] = {body="Piety Cap +1"}
-   sets.precast.JA['Benediction'] = {body="Piety Briault +1"}
+   sets.precast.JA['Benediction'] = {body="Piety Bliaut +1"}
    sets.precast.JA['Martyr'] = {body="Piety Mitts +1"}
+   sets.precast.JA['Sublimation'] = {waist="Embla Sash"}
                 
    -- Fast Cast 80% needed (or as much as possible)
    -- Grio +4% - TRY TO USE CLUB if possible to avoid blinking
@@ -134,7 +133,7 @@ function init_gear_sets()
    -- Weather. Ring +3%
    -- 5% QC < 10% cap
    
-   sets.precast.FC = {main=GrioEnfeeb,sub="Clerisy Strap +1",ammo="Impatiens",
+   sets.precast.FC = {main="Contemplator +1",sub="Clerisy Strap +1",ammo="Impatiens",
       head="Nahtirah Hat",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
       body="Inyanga Jubbah +2",hands="Gende. Gages +1",ring1="Kishar Ring",ring2="Weather. Ring",
       back=AlaunusFC,waist="Witful Belt",legs="Aya. Cosciales +2",feet="Regal Pumps +1"}
@@ -151,12 +150,12 @@ function init_gear_sets()
   
    sets.midcast.Cure = {main=QuellerCure,sub="Sors Shield",ammo="Quartz Tathlum +1",
       head="Gende. Caubeen +1",neck="Incanter's Torque",ear1="Glorious Earring",ear2="Regal Earring",
-      body="Ebers Bliaud +1",hands="Theophany Mitts +2",ring1="Lebeche Ring",ring2="Stikini Ring +1",
+      body="Ebers Bliaut +1",hands="Theophany Mitts +2",ring1="Lebeche Ring",ring2="Stikini Ring +1",
       back=AlaunusMND,waist="Luminary Sash",legs="Ebers Pant. +1",feet="Kaykaus Boots"}
 
    sets.midcast.Curaga = {main=QuellerCuraga,sub="Sors Shield",ammo="Quartz Tathlum +1",
       head="Gende. Caubeen +1",neck="Nuna Gorget +1",ear1="Glorious Earring",ear2="Regal Earring",
-      body="Theo. Briault +1",hands="Theophany Mitts +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+      body="Theo. Bliaut +1",hands="Theophany Mitts +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
       back=AlaunusMND,waist="Luminary Sash",legs="Ebers Pant. +1",feet="Kaykaus Boots"}
       
    -- Includes Torque for Erase   
@@ -172,7 +171,7 @@ function init_gear_sets()
       neck="Malison Medallion",         -- neck="Debilis Medallion"   NEED
       ear1="Beatific Earring",
                                         -- ear2="Healing Earring"   NEED
-      body="Ebers Bliaud +1",
+      body="Ebers Bliaut +1",
       hands="Fanatic Gloves",
       ring1="Haoma's Ring",        
       ring2="Haoma's Ring",
@@ -187,7 +186,7 @@ function init_gear_sets()
    
    sets.midcast.BarElement = {main="Beneficus",sub="Ammurapi Shield",
       head="Ebers Cap +1",neck="Incanter's Torque",
-      body="Ebers Bliaud +1",hands="Ebers Mitts +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+      body="Ebers Bliaut +1",hands="Ebers Mitts +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
       back=AlaunusMND,waist="Luminary Sash",legs="Piety Pantaln. +1",feet="Ebers Duckbills +1"}
 
    sets.midcast.BarStatus = {main="Gada",sub="Ammurapi Shield",
@@ -214,45 +213,45 @@ function init_gear_sets()
       {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})  
 
    sets.midcast.Regen = set_combine(sets.midcast.Enhancing, 
-      {main="Bolelabunga",sub="Sors Shield",head="Inyanga Tiara +2",body="Piety Briault +1",hands="Ebers Mitts +1",legs="Th. Pantaloons +2",feet="Telchine Pigaches"})
+      {main="Bolelabunga",sub="Sors Shield",head="Inyanga Tiara +2",body="Piety Bliaut +1",hands="Ebers Mitts +1",legs="Th. Pantaloons +2",feet="Telchine Pigaches"})
 
    sets.midcast.Aquaveil = set_combine(sets.midcast.Enhancing,  
       {head="Chironic Hat",legs="Shedir Seraweels"})
       
-   sets.midcast.MagicAcc = {main=GrioEnfeeb,sub="Clerisy Strap +1",ammo="Pemphredo Tathlum",
-      head="Chironic Hat",neck="Erra Pendant",ear1="Digni. Earring",ear2="Gwati Earring",
+   sets.midcast.MagicAcc = {main="Contemplator +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+      head="Chironic Hat",neck="Erra Pendant",ear1="Digni. Earring",ear2="Malignance Earring",
       body="Chironic Doublet",hands=ChironicMAccHands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-      back=AlaunusMND,waist="Luminary Sash",legs="Chironic Hose",feet="Aya. Gambieras +2"}
+      back=AlaunusMND,waist="Luminary Sash",legs="Chironic Hose",feet="Medium's Sabots"}
 
    sets.midcast['Diaga'] = set_combine(sets.midcast.MagicAcc, {hands=ChironicTH,waist="Chaac Belt",feet="Volte Boots"})      
    sets.midcast['Dia II'] = set_combine(sets.midcast.MagicAcc, {hands=ChironicTH,waist="Chaac Belt",feet="Volte Boots"})
       
    --- PDT / MDT / MEva / MDB (Cap : 50%, 50%)
    -- (Shell V) 0% / 29%
-   -- Terra's Staff 20% / 0% /  0 /  0  PDT
+   -- Malignance Pole 20% / 0% /  0 /  0  PDT
    -- Enki Strap 0%/ 0% / 10 / 0
    -- Staunch Tathlum 
-   -- Inyanga Tiara +2 - 0% / 5% / 114 / 8     (Aya. Zucchetto +2 - 2% / 2% / 53 / 3)
+   -- Inyanga Tiara +2 - 0% / 5% / 114 / 8
    -- Loricate Torque +1 - 6% / 6%
    -- Etiolation Earring - 0% / 3%
    -- Static Earring - 0% / 0% / 0% / 2
    -- Ayanmo Corazza +2 - 6% / 6% / 64 / 6     (Inyanga +1 114 meva 7 mdt 11 mdb)
-   -- Chironic DT Gloves - 4% / 4% / 48 / 3    (Inyanga +1 71 meva, 5 mdt 5 mdb)
+   -- Ayanmo Manopolas +2 - 3% / 3% / 37 / 2    (Inyanga +1 71 meva, 5 mdt 5 mdb)
    -- Left Dark Ring - 4% / 5%
    -- Right Dark Ring - 4% / 4%
    -- Solemnity Cape - 4% / 4%
    -- Inyanga Shalwar +2 - 0% / 4% / 147 / 9
    -- Chironic DT Feet - 6% / 4% / 118 / 6
-   -- Totals 54% / >50% / 495 / 34
+   -- Totals 53% / >50% / 495 / 34
    
-   sets.defense.PDT = {main="Terra's Staff",sub="Enki Strap",ammo="Staunch Tathlum",
+   sets.defense.PDT = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum",
       head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Static Earring",
-      body="Ayanmo Corazza +2",hands=ChironicDTHands,ring1="Defending Ring",ring2=DarkRing,
+      body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Defending Ring",ring2=DarkRing,
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet=ChironicDTFeet}
 
    --- PDT / MDT / MEva (Cap : 50%, 50%)
    -- (Shell V) 0% / 29%
-   -- Terra's Staff 20% / 0% /  0 /  0
+   -- Malignance Pole 20% / 0% /  0 /  0
    -- Enki Strap 0% / 0% / 10 / 0
    -- Staunch Tathlum 10 %status
    -- Inyanga Tiara +2 - 0% / 5% / 114 / 8
@@ -268,31 +267,31 @@ function init_gear_sets()
    -- Inyan. Crackows +2 - 0% / 3% / 147 / 8 or Volte Boots 0% / 0% / 102 / 7 / 10% status
    -- Totals 34% / >50% / 627 / 43 / 20% status
            
-   sets.defense.MDT = {main="Terra's Staff",sub="Enki Strap",ammo="Staunch Tathlum",
+   sets.defense.MDT = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum",
       head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Static Earring",
       body="Inyanga Jubbah +2",hands="Volte Bracers",ring1="Inyanga Ring",ring2="Defending Ring",
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet="Inyanga Crackows +2"}
    
    -- Basic Melee Sets
-   sets.engaged = {ammo="Jukukik Feather",
-      head="Aya. Zucchetto +2",neck="Asperity Necklace",ear1="Dedition Earring",ear2="Suppanomimi",
+   sets.engaged = {ammo="Staunch Tathlum",
+      head="Inyanga Tiara +2",neck="Combatant's Torque",ear1="Dedition Earring",ear2="Suppanomimi",
       body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Hetairoi Ring",ring2="Ilabrat Ring",
-      back="Solemnity Cape",waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2"}
+      back="Solemnity Cape",waist="Windbuffet Belt +1",legs="Aya. Cosciales +2",feet="Volte Boots"}
 
    sets.precast.WS = {ammo="Quartz Tathlum +1",
-      head="Aya. Zucchetto +2",neck="Fotia Gorget",ear1="Telos Earring",ear2="Moonshade Earring",
+      head="Inyanga Tiara +2",neck="Fotia Gorget",ear1="Telos Earring",ear2="Moonshade Earring",
       body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Stikini Ring +1",ring2="Rufescent Ring",
-      back=AlaunusMND,waist="Fotia Belt",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2"}
+      back=AlaunusMND,waist="Fotia Belt",legs="Aya. Cosciales +2",feet="Volte Boots"}
       
    sets.precast.WS['Realmrazer'] = {ammo="Quartz Tathlum +1",
-      head="Aya. Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
+      head="Inyanga Tiara +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
       body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Stikini Ring +1",ring2="Rufescent Ring",
-      back=AlaunusMND,waist="Fotia Belt",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2"}
+      back=AlaunusMND,waist="Fotia Belt",legs="Aya. Cosciales +2",feet="Volte Boots"}
 
    sets.precast.WS['Mystic Boon'] = {ammo="Quartz Tathlum +1",
-      head="Aya. Zucchetto +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
+      head="Inyanga Tiara +2",neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring",
       body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Stikini Ring +1",ring2="Rufescent Ring",
-      back=AlaunusMND,waist="Fotia Belt",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2"}
+      back=AlaunusMND,waist="Fotia Belt",legs="Aya. Cosciales +2",feet="Volte Boots"}
         
 end
      

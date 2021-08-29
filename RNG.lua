@@ -112,7 +112,7 @@ function init_gear_sets()
 	--sets.midcast.FastRecast = {
 	--	head="Orion Beret +1",ear1="Loquacious Earring",
 	--	ring1="Prolix Ring",
-	--	waist="Pya'ekue Belt +1",legs="Orion Braccae +1",feet="Orion Socks +1"}
+	--	waist="Salifi Belt +1",legs="Orion Braccae +1",feet="Orion Socks +1"}
 	
 	sets.midcast.FastRecast = {}
 	sets.midcast.Utsusemi = {}
@@ -158,7 +158,7 @@ function init_gear_sets()
 	--sets.idle = {
 	--	head="Arcadian Beret +1",neck="Ej Necklace +1",ear1="Vulcan's Pearl",ear2="Vulcan's Pearl",
 	--	body="Khepri Jacket",hands="Arcadian Bracers +1",ring1="Defending Ring",ring2="Shadow Ring",
-	--	back="Shadow Mantle",waist="Pya'ekue Belt +1",legs="Nahtirah Trousers",feet="Fajin Boots"}
+	--	back="Shadow Mantle",waist="Salifi Belt +1",legs="Nahtirah Trousers",feet="Fajin Boots"}
 	sets.idle = {
 		head="Orion Beret +1",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
 		body="Orion Jerkin +1",hands="Buremte Gloves",ring1=LeftDarkRing,ring2=RightDarkRing,
@@ -200,7 +200,7 @@ function init_gear_sets()
 		back="Atheling Mantle",waist="Cetl Belt",legs="Orion Braccae +1",feet="Orion Socks +1"}
 
 	--sets.engaged.Acc = {
-	--	head="Whirlpool Mask",neck="Asperity Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
+	--	head="Whirlpool Mask",neck="Combatant's Torque",ear1="Steelflash Earring",ear2="Bladeborn Earring",
 	--	body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="K'ayres Ring",ring2="Rajas Ring",
 	--	back="Letalis Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Iuitl Gaiters"}
 	sets.engaged.Acc = {

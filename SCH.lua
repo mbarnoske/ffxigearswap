@@ -70,17 +70,27 @@ function user_setup()
 
     send_command('bind ` input /ma Stun <t>; wait 0.5; input /p Casting STUN on <t>.')
    
-    GrioEnfeeb = { name="Grioavolr", augments={'Enfb.mag. skill +15','MND+11','Mag. Acc.+30','"Mag.Atk.Bns."+27','Magic Damage +2',}}
     GrioNuke = { name="Grioavolr", augments={'Magic burst mdg.+5%','INT+10','Mag. Acc.+30','"Mag.Atk.Bns."+24','Magic Damage +9',}}
    
     DarkRing = {name="Dark Ring", augments={'Phys. dmg. taken -4%','Magic dmg. taken -5%','Spell interruption rate down -3%',}}
     ChironicDTHands = { name="Chironic Gloves", augments={'MND+1','"Dbl.Atk."+3','Damage taken-4%','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
     ChironicDTFeet = { name="Chironic Slippers", augments={'"Dbl.Atk."+1','MND+5','Damage taken-4%','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
     ChironicTH = {name="Chironic Gloves", augments={'"Mag.Atk.Bns."+7','Accuracy+18 Attack+18','"Treasure Hunter"+2','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}    
-    ChironicRefreshHands = { name="Chironic Gloves", augments={'CHR+1','Accuracy+2','"Refresh"+1','Accuracy+13 Attack+13','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
-    ChironicMAccHands = { name="Chironic Gloves", augments={'Mag. Acc.+30','"Fast Cast"+4','Magic Damage +6','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}   
-    MerlinicNuke = { name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+9%','MND+9','"Mag.Atk.Bns."+6',}}
-    MerlinicRefreshFeet = { name="Merlinic Crackows", augments={'Attack+3','Pet: INT+4','"Refresh"+1','Accuracy+9 Attack+9',}}
+    ChironicMAccHands = { name="Chironic Gloves", augments={'Mag. Acc.+30','"Fast Cast"+4','Magic Damage +6','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
+    MerlinicHeadFC = { name="Merlinic Hood", augments={'Mag. Acc.+22','"Fast Cast"+7','INT+6','"Mag.Atk.Bns."+6',}}
+    MerlinicHeadOA = { name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Occult Acumen"+11','MND+10',}}
+    MerlinicHeadNuke = { name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+6%','Mag. Acc.+13','"Mag.Atk.Bns."+14',}}
+    MerlinicHeadTH = { name="Merlinic Hood", augments={'"Fast Cast"+2','Crit.hit rate+1','"Treasure Hunter"+1','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
+    MerlinicBodyFC = { name="Merlinic Jubbah", augments={'Mag. Acc.+9','"Fast Cast"+7','INT+10','"Mag.Atk.Bns."+3',}}
+    MerlinicBodyDA = { name="Merlinic Jubbah", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','"Drain" and "Aspir" potency +11','INT+5',}}
+    MerlinicHandsFC = { name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+17','"Fast Cast"+7','INT+6','Mag. Acc.+2',}}
+    MerlinicHandsOA = { name="Merlinic Dastanas", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','"Occult Acumen"+11','"Mag.Atk.Bns."+14',}}
+    MerlinicHandsDA = { name="Merlinic Dastanas", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','"Drain" and "Aspir" potency +11','CHR+8',}}
+    MerlinicHandsRefresh = { name="Merlinic Dastanas", augments={'AGI+2','MND+13','"Refresh"+2','Accuracy+5 Attack+5','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
+    MerlinicFeetFC = { name="Merlinic Crackows", augments={'"Fast Cast"+7','Mag. Acc.+1',}}
+    MerlinicFeetOA = { name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+29','"Occult Acumen"+11','Mag. Acc.+8',}}
+    MerlinicFeetNuke = { name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+9%','MND+9','"Mag.Atk.Bns."+6',}}
+    MerlinicFeetRefresh = { name="Merlinic Crackows", augments={'Attack+3','Pet: INT+4','"Refresh"+1','Accuracy+9 Attack+9',}}
 
     --select_default_macro_book()
 end
@@ -118,14 +128,14 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
 
     sets.precast.JA['Tabula Rasa'] = {legs="Pedagogy Pants"}
-
+    sets.precast.JA['Sublimation'] = {waist="Embla Sash"}
 
     -- Fast cast sets for spells
 
-    sets.precast.FC = {ammo="Incantor Stone",
-        head="Amalric Coif +1",ear1="Barkarole Earring",ear2="Loquac. Earring",
-        body="Helios Jacket",hands="Gende. Gages +1",ring1="Weatherspoon Ring",
-        back="Swith Cape",waist="Witful Belt",legs="Psycloth Lappas",feet=MerlinicNuke}
+    sets.precast.FC = {ammo="Sapience Orb",
+        head=MerlinicHeadFC,neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body=MerlinicBodyFC,hands=MerlinicHandsFC,ring1="Weather. Ring",ring2="Mephitas's Ring +1",
+        back="Swith Cape",waist="Witful Belt",legs="Psycloth Lappas",feet=MerlinicFeetFC}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -140,51 +150,48 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Hasty Pinion +1",
-        head="Hagondes Hat +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Telos Earring",
+        head="Hagondes Hat +1",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Telos Earring",
         body="Ischemia Chasu.",hands="Amalric Gages +1",ring1="Ifrit Ring +1",ring2="Rufescent Ring",
         back="Rancorous Mantle",waist="Fotia Belt",legs="Psycloth Lappas",feet="Battlecast Gaiters"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     --sets.precast.WS['Vidohunir'] = {ammo="Dosis Tathlum",
-    --    head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Regal Earring",
+    --    head="Hagondes Hat",neck="Eddy Necklace",ear1="Malignance Earring",ear2="Regal Earring",
     --    body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Acumen Ring",
     --    back="Toro Cape",waist="Thunder Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
 
     sets.precast.WS['Myrkr'] = {ammo="Ghastly Tathlum +1",
         head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Etiolation Earring",ear2="Moonshade Earring",
-        body="Amalric Doublet +1",hands="Otomi Gloves",ring1="Sangoma Ring",ring2="Mephitas's Ring +1",
-        back="Twilight Cape",waist="Fucho-no-Obi",legs="Amalric Slops +1",feet="Amalric Nails"}
+        body="Amalric Doublet +1",hands="Kaykaus Cuffs +1",ring1="Sangoma Ring",ring2="Mephitas's Ring +1",
+        back="Twilight Cape",waist="Fucho-no-Obi",legs="Amalric Slops +1",feet="Amalric Nails +1"}
     
     -- Midcast Sets
 
-    sets.midcast.FastRecast = {ammo="Incantor Stone",
-        head="Amalric Coif +1",ear2="Loquacious Earring",
-        body="Helios Jacket",hands="Gende. Gages +1",ring1="Weatherspoon Ring",
-        back="Swith Cape",waist="Witful Belt",legs="Psycloth Lappas",feet=MerlinicNuke}
+    sets.midcast.FastRecast = {ammo="Sapience Orb",
+        head=MerlinicHeadFC,neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body=MerlinicBodyFC,hands=MerlinicHandsFC,ring1="Weather. Ring",ring2="Mephitas's Ring +1",
+        back="Swith Cape",waist="Witful Belt",legs="Psycloth Lappas",feet=MerlinicFeetFC}
 
-    sets.midcast.Cure = {ammo="Incantor Stone",
+    sets.midcast.Cure = {ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Nodens Gorget",ear1="Regal Earring",ear2="Loquac. Earring",
         body="Chironic Doublet",hands="Kaykaus Cuffs +1",ring1="Sirona's Ring",ring2="Stikini Ring +1",
         back="Lugh's Cape",waist="Witful Belt",legs="Chironic Hose",feet="Medium's Sabots"}
 
-    sets.midcast.CureWithLightWeather = {ammo="Incantor Stone",
+    sets.midcast.CureWithLightWeather = {ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Nodens Gorget",ear1="Regal Earring",ear2="Loquac. Earring",
         body="Chironic Doublet",hands="Kaykaus Cuffs +1",ring1="Sirona's Ring",ring2="Stikini Ring +1",
         back="Twilight Cape",waist="Hachirin-no-Obi",legs="Chironic Hose",feet="Medium's Sabots"}
 
     sets.midcast.Curaga = sets.midcast.Cure
 
-    -- TODO
-    --sets.midcast.Regen = {main="Bolelabunga",head="Arbatel Bonnet",feet="Telchine pigaches"}
-   
     sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head="Amalric Coif +1"})
 
     sets.midcast.Cursna = set_combine(sets.midcast['Enhancing Magic'], {ring1="Haoma's Ring"})
 
-    sets.midcast['Enhancing Magic'] = {ammo="Incantor Stone",
-        head="Befouled Crown",neck="Incanter's Torque",ear1="Augment. Earring",ear2="Andoaa Earring",
-        body="Chironic Doublet",hands=ChironicRefreshHands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Lugh's Cape",waist="Olympus Sash",legs="Shedir Seraweels",feet=MerlinicNuke}
+    sets.midcast['Enhancing Magic'] = {ammo="Hasty Pinion +1",
+        head="Telchine Cap",neck="Incanter's Torque",ear1="Mimir Earring",ear2="Andoaa Earring",
+        body="Chironic Doublet",hands=MerlinicHandsRefresh,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Lugh's Cape",waist="Olympus Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
                     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
 
@@ -198,123 +205,121 @@ function init_gear_sets()
     --sets.midcast.Shellra = sets.midcast.Shell
 
     -- Custom spell classes
-    sets.midcast.MndEnfeebles = {main=GrioNuke,sub="Enki Strap",ammo="Quartz Tathlum +1",
-        head="Merlinic Hood",neck="Incanter's Torque",ear1="Gwati Earring",ear2="Digni. Earring",
+    sets.midcast.MndEnfeebles = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head=MerlinicHeadNuke,neck="Incanter's Torque",ear1="Malignance Earring",ear2="Digni. Earring",
         body="Chironic Doublet",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Lugh's Cape",waist="Rumination Sash",legs="Chironic Hose",feet="Medium's Sabots"}
 
-    sets.midcast.IntEnfeebles = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Merlinic Hood",neck="Incanter's Torque",ear1="Gwati Earring",ear2="Digni. Earring",
+    sets.midcast.IntEnfeebles = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head=MerlinicHeadNuke,neck="Incanter's Torque",ear1="Malignance Earring",ear2="Digni. Earring",
         body="Chironic Doublet",hands="Kaykaus Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Lugh's Cape",waist="Rumination Sash",legs="Chironic Hose",feet="Medium's Sabots"}
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
-    sets.midcast['Dark Magic'] = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Merlinic Hood",neck="Erra Pendant",ear1="Barkaro. Earring",ear2="Digni. Earring",
+    sets.midcast['Dark Magic'] = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head=MerlinicHeadNuke,neck="Erra Pendant",ear1="Barkaro. Earring",ear2="Digni. Earring",
         body="Merlinic Jubbah",hands=ChironicMAccHands,ring1="Sangoma Ring",ring2="Stikini Ring +1",
-        back="Lugh's Cape",waist="Porous Rope",legs="Merlinic Shalwar",feet=MerlinicNuke}
+        back="Lugh's Cape",waist="Luminary Sash",legs="Merlinic Shalwar",feet=MerlinicFeetNuke}
 
-    sets.midcast.Kaustra = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
+    sets.midcast.Kaustra = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Malignance Earring",
         body="Merlinic Jubbah",hands="Amalric Gages +1",ring1="Archon Ring",ring2="Freke Ring",
-        back="Lugh's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet=MerlinicNuke}
+        back="Lugh's Cape",waist="Sacro Cord",legs="Merlinic Shalwar",feet=MerlinicFeetNuke}
         
     -- Hit 50 MB% w/o feet b/c of Arbatel Loafers +1 during Klimaform/Weather    
-    sets.midcast.Kaustra.MB = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast.Kaustra.MB = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Mizu. Kubikazari",ear1="Barkarole Earring",ear2="Static Earring",
         body="Merlinic Jubbah",hands="Amalric Gages +1",ring1="Mujin Band",ring2="Archon Ring",
-        back="Lugh's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet=MerlinicNuke}
+        back="Lugh's Cape",waist="Sacro Cord",legs="Merlinic Shalwar",feet=MerlinicFeetNuke}
 
-    sets.midcast.Drain = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
+    sets.midcast.Drain = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Barkaro. Earring",ear2="Digni. Earring",
         body="Merlinic Jubbah",hands=ChironicMAccHands,ring1="Archon Ring",ring2="Evanescence Ring",
-        back="Lugh's Cape",waist="Fucho-no-Obi",legs="Chironic Hose",feet=MerlinicNuke}
+        back="Lugh's Cape",waist="Fucho-no-Obi",legs="Chironic Hose",feet=MerlinicFeetNuke}
 
     sets.midcast.Aspir = sets.midcast.Drain
 
-    sets.midcast.Stun = {main=GrioNuke,sub="Enki Strap",ammo="Incantor Stone",
-        head="Amalric Coif +1",neck="Sanctity Necklace",ear1="Regal Earring",ear2="Loquac. Earring",
-        body="Helios Jacket",hands="Gende. Gages +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Swith Cape",waist="Witful Belt",legs="Psycloth Lappas",feet=MerlinicNuke}
+    sets.midcast.Stun = {main="Marin Staff +1",sub="Enki Strap",ammo="Sapience Orb",
+        head=MerlinicHeadFC,neck="Baetyl Pendant",ear1="Etiolation Earring",ear2="Loquacious Earring",
+        body=MerlinicBodyFC,hands=MerlinicHandsFC,ring1="Weather. Ring",ring2="Mephitas's Ring +1",
+        back="Swith Cape",waist="Witful Belt",legs="Psycloth Lappas",feet=MerlinicFeetFC}
 
-    sets.midcast['Elemental Magic'] = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Merlinic Hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
+    sets.midcast['Elemental Magic'] = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head=MerlinicHeadNuke,neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Malignance Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
-        back="Lugh's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet=MerlinicNuke}
+        back="Lugh's Cape",waist="Sacro Cord",legs="Merlinic Shalwar",feet=MerlinicFeetNuke}
     
     -- Hit 50 MB% w/o feet b/c of Arbatel Loafers +1 during Klimaform/Weather    
     
-    -- Current SCH Elemental Magic MBD% :
-    -- Grioavolr (Nuke) : 5% (MAcc30, Matt24, MDmg9)
+    -- Current SCH Elemental Magic MBD1% :
     -- Merlinic Hood : 6% (MAcc36, MAtt37)
     -- Mizu Kubikazari : 10% (INT4, MAtt8)
     -- Merlinic Jubbah : 8% (INT6 MAcc22 MAtt36)
-    -- Amalric Gages : 5%+
-    -- Mujin Band : 5%+
     -- Merlinic Shalwar : 7% (MAcc23 Matt34)
     -- Merlinic Boots : 9% (MAcc25 MAtt31)
-    
-    -- Total : 60%, Cap 50%
-    sets.midcast['Elemental Magic'].MB = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Merlinic Hood",neck="Mizu. Kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
+    -- Total : 40% (Cap 40%)
+    -- Amalric Gages : MBD2 6%
+    -- Mujin Band : MBD2 5%
+    sets.midcast['Elemental Magic'].MB = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head=MerlinicHeadNuke,neck="Mizu. Kubikazari",ear1="Barkarole Earring",ear2="Malignance Earring",
         body="Merlinic Jubbah",hands="Amalric Gages +1",ring1="Mujin Band",ring2="Freke Ring",
-        back="Lugh's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet=MerlinicNuke}
+        back="Lugh's Cape",waist="Sacro Cord",legs="Merlinic Shalwar",feet=MerlinicFeetNuke}
 
     sets.midcast.Helix = sets.midcast['Elemental Magic']
     -- Hit 50 MB% w/o feet b/c of Arbatel Loafers +1 during Klimaform/Weather    
     sets.midcast.Helix.MB = sets.midcast['Elemental Magic'].MB
 
-    sets.midcast.Impact = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head=empty,neck="Incanter's Torque",ear1="Gwati Earring",ear2="Digni. Earring",
+    sets.midcast.Impact = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head=empty,neck="Incanter's Torque",ear1="Malignance Earring",ear2="Digni. Earring",
         body="Twilight Cloak",hands=ChironicMAccHands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Lugh's Cape",waist="Porous Rope",legs="Chironic Hose",feet="Medium's Sabots"}                  
+        back="Lugh's Cape",waist="Luminary Sash",legs="Chironic Hose",feet="Medium's Sabots"}                  
         
     -- Sets to return to when not performing an action.
 
     -- Resting sets
-    sets.resting = {main=GrioNuke,sub="Enki Strap",ammo="Homiliary",
-        head="Befouled Crown",neck="Loricate Torque +1",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Amalric Doublet +1",hands=ChironicRefreshHands,ring1=DarkRing,ring2="Defending Ring",
-        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicRefreshFeet}
+    sets.resting = {main="Marin Staff +1",sub="Enki Strap",ammo="Homiliary",
+        head="Befouled Crown",neck="Loricate Torque +1",ear1="Barkarole Earring",ear2="Malignance Earring",
+        body="Amalric Doublet +1",hands=MerlinicHandsRefresh,ring1=DarkRing,ring2="Defending Ring",
+        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicFeetRefresh}
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    sets.idle.Town = {main=GrioNuke,sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head="Amalric Coif +1",neck="Mizu. Kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
+    sets.idle.Town = {main="Marin Staff +1",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head="Amalric Coif +1",neck="Mizu. Kubikazari",ear1="Barkarole Earring",ear2="Malignance Earring",
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Mujin Band",ring2="Freke Ring",
-        back="Lugh's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet=MerlinicNuke}
+        back="Lugh's Cape",waist="Sacro Cord",legs="Merlinic Shalwar",feet=MerlinicFeetNuke}
 
-    sets.idle.Field = {main=GrioNuke,sub="Enki Strap",ammo="Homiliary",
+    sets.idle.Field = {main="Marin Staff +1",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands=ChironicRefreshHands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicRefreshFeet}
+        body="Jhakri Robe +2",hands=MerlinicHandsRefresh,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicFeetRefresh}
 
-    sets.idle.Field.PDT = {main=GrioNuke,sub="Enki Strap",ammo="Homiliary",
+    sets.idle.Field.PDT = {main="Marin Staff +1",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands=ChironicRefreshHands,ring1="Defending Ring",ring2=DarkRing,
-        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicRefreshFeet}
+        body="Jhakri Robe +2",hands=MerlinicHandsRefresh,ring1="Defending Ring",ring2=DarkRing,
+        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicFeetRefresh}
 
-    sets.idle.Field.Stun = {main=GrioNuke,sub="Enki Strap",ammo="Homiliary",
+    sets.idle.Field.Stun = {main="Marin Staff +1",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands=ChironicRefreshHands,ring1="Defending Ring",ring2=DarkRing,
-        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicRefreshFeet}
+        body="Jhakri Robe +2",hands=MerlinicHandsRefresh,ring1="Defending Ring",ring2=DarkRing,
+        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicFeetRefresh}
 
-    sets.idle.Weak = {main=GrioNuke,sub="Enki Strap",ammo="Homiliary",
+    sets.idle.Weak = {main="Marin Staff +1",sub="Enki Strap",ammo="Homiliary",
         head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands=ChironicRefreshHands,ring1="Defending Ring",ring2=DarkRing,
-        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicRefreshFeet}
+        body="Jhakri Robe +2",hands=MerlinicHandsRefresh,ring1="Defending Ring",ring2=DarkRing,
+        back="Solemnity Cape",waist="Fucho-no-Obi",legs="Assid. Pants +1",feet=MerlinicFeetRefresh}
 
     -- Defense sets
 
-    sets.defense.PDT = {main=GrioNuke,sub="Enki Strap",ammo="Staunch Tathlum",
+    sets.defense.PDT = {main="Marin Staff +1",sub="Enki Strap",ammo="Staunch Tathlum",
         head="Amalric Coif +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Regal Earring",
-        body="Merlinic Jubbah",hands=ChironicDTHands,ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Merlinic Jubbah",hands="Volte Bracers",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back="Solemnity Cape",waist="Fucho-no-Obi",legs="Merlinic Shalwar",feet=ChironicDTFeet}
 
-    sets.defense.MDT = {main=GrioNuke,sub="Enki Strap",ammo="Staunch Tathlum",
+    sets.defense.MDT = {main="Marin Staff +1",sub="Enki Strap",ammo="Staunch Tathlum",
         head="Amalric Coif +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Regal Earring",
-        body="Merlinic Jubbah",hands=ChironicDTHands,ring1="Defending Ring",ring2=DarkRing,
+        body="Merlinic Jubbah",hands="Volte Bracers",ring1="Defending Ring",ring2=DarkRing,
         back="Solemnity Cape",waist="Fucho-no-Obi",legs="Merlinic Shalwar",feet=ChironicDTFeet}
 
     sets.Kiting = {} --{feet="Herald's Gaiters"}
@@ -329,7 +334,7 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     -- TH4 Tag
-    sets.engaged = {main=GrioNuke,sub="Enki Strap",ammo="Homiliary",
+    sets.engaged = {main="Marin Staff +1",sub="Enki Strap",ammo="Homiliary",
         head="Amalric Coif +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Barkarole Earring",
         body="Merlinic Jubbah",hands=ChironicTH,ring1="Defending Ring",ring2=DarkRing,
         back="Solemnity Cape",waist="Chaac Belt",legs="Merlinic Shalwar",feet="Volte Boots"}

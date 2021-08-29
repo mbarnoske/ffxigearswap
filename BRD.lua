@@ -70,7 +70,6 @@ function user_setup()
     select_default_macro_book()
     
    DarkRing = {name="Dark Ring", augments={'Phys. dmg. taken -4%','Magic dmg. taken -5%','Spell interruption rate down -3%',}}
-   ChironicRefreshHands = { name="Chironic Gloves", augments={'CHR+1','Accuracy+2','"Refresh"+1','Accuracy+13 Attack+13','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
    ChironicMAccHands = { name="Chironic Gloves", augments={'Mag. Acc.+30','"Fast Cast"+4','Magic Damage +6','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}   
    ChironicDTHands = { name="Chironic Gloves", augments={'MND+1','"Dbl.Atk."+3','Damage taken-4%','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
    ChironicDTFeet = { name="Chironic Slippers", augments={'"Dbl.Atk."+1','MND+5','Damage taken-4%','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
@@ -201,7 +200,7 @@ function init_gear_sets()
     -- Other general spells and classes.
     sets.midcast.Cure = {main="Serenity",sub="Enki Strap",
         head="Gende. Caubeen +1",neck="Nuna Gorget +1",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-        body="Chironic Doublet",hands="Otomi Gloves",ring1="Ephedra Ring",ring2="Sirona's Ring",
+        body="Chironic Doublet",hands="Kaykaus Cuffs +1",ring1="Ephedra Ring",ring2="Sirona's Ring",
         back="Intarabus's Cape",waist="Witful Belt",legs="Assid. Pants +1",feet="Vanya Clogs"}
         
     sets.midcast.Curaga = sets.midcast.Cure
@@ -230,9 +229,9 @@ function init_gear_sets()
       body="Inyanga Jubbah +2",hands="Inyan. Dastanas +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet="Inyan. Crackows +2"}
 
-    sets.idle.PDT = {main="Terra's Staff",sub="Enki Strap",ammo="Staunch Tathlum",
+    sets.idle.PDT = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum",
       head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Static Earring",
-      body="Ayanmo Corazza +2",hands=ChironicDTHands,ring1="Defending Ring",ring2="Gelatinous Ring +1",
+      body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet=ChironicDTFeet}
 
     sets.idle.Town = {main="Sangoma",sub="Ammurapi Shield",range="Eminent Flute",
@@ -248,12 +247,12 @@ function init_gear_sets()
     
     -- Defense sets
 
-    sets.defense.PDT = {main="Terra's Staff",sub="Enki Strap",ammo="Staunch Tathlum",
+    sets.defense.PDT = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum",
       head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Static Earring",
-      body="Ayanmo Corazza +2",hands=ChironicDTHands,ring1="Defending Ring",ring2="Gelatinous Ring +1",
+      body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet=ChironicDTFeet}
 
-    sets.defense.MDT = {main="Terra's Staff",sub="Enki Strap",ammo="Staunch Tathlum",
+    sets.defense.MDT = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum",
       head="Inyanga Tiara +2",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Static Earring",
       body="Inyanga Jubbah +2",hands="Inyan. Dastanas +2",ring1="Inyanga Ring",ring2="Defending Ring",
       back="Solemnity Cape",waist="Fucho-no-obi",legs="Inyanga Shalwar +2",feet="Inyan. Crackows +2"}
@@ -271,19 +270,19 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Nahtirah Hat",neck="Combatant's Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Bihu Justaucorps",hands="Buremte Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
         back="Atheling Mantle",waist="Goading Belt",legs="Brioso Cannions +1",feet="Gendewitha Galoshes"}
 
     -- Sets with weapons defined.
     sets.engaged.Dagger = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+        head="Nahtirah Hat",neck="Combatant's Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
         body="Bihu Justaucorps",hands="Buremte Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
         back="Atheling Mantle",waist="Goading Belt",legs="Brioso Cannions +1",feet="Gendewitha Galoshes"}
 
     -- Set if dual-wielding
     sets.engaged.DW = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+        head="Nahtirah Hat",neck="Combatant's Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Bihu Justaucorps",hands="Buremte Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
         back="Atheling Mantle",waist="Goading Belt",legs="Brioso Cannions +1",feet="Gendewitha Galoshes"}
 end
